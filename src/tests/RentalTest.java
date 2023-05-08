@@ -28,12 +28,12 @@ public class RentalTest {
     }
 
     @Test
-    public void getCharge() {
-        assertEquals(14.0, rental.getCharge(), 0);
+    public void getFrequentRenterPoints() {
+        assertEquals(1, rental.getFrequentRenterPoints());
     }
 
     @Test
-    public void getFrequentRenterPoints() {
-        assertEquals(1, rental.getFrequentRenterPoints());
+    public void getCharge() {
+        assertEquals(14.0, rental.getCharge(), 0);
     }
 }
