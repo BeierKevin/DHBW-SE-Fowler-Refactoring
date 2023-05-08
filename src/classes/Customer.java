@@ -23,8 +23,7 @@ public class Customer {
         result += "\t" + "Title" + "\t" + "\t" + "Days" + "\t" + "Amount" + "\n";
 
         for (Rental rental : rentals) {
-            result += "\t" + rental.getMovie().getTitle() + "\t" + "\t" + rental.getDaysRented() + "\t"
-                    + String.valueOf(rental.getCharge()) + "\n";
+            result += rental.toString();
         }
 
         result += "Amount owed is " + String.valueOf(getTotalCharge()) + "\n";
