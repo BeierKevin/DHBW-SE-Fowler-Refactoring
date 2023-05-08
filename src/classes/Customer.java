@@ -1,11 +1,10 @@
 package classes;
 
-import java.lang.*;
 import java.util.*;
 
 public class Customer {
     private String name;
-    private Vector rentals = new Vector();
+    private Vector<Rental> rentals = new Vector<Rental>();
 
     public Customer(String newname) {
         name = newname;
@@ -20,7 +19,7 @@ public class Customer {
     };
 
     public String statement() {
-        Enumeration enum_rentals = rentals.elements();
+        Enumeration<Rental> enum_rentals = rentals.elements();
         String result = "Rental Record for " + this.getName() + "\n";
         result += "\t" + "Title" + "\t" + "\t" + "Days" + "\t" + "Amount" + "\n";
 
@@ -38,7 +37,7 @@ public class Customer {
 
     private double getTotalCharge() {
         double charge = 0;
-        Enumeration enum_rentals = rentals.elements();
+        Enumeration<Rental> enum_rentals = rentals.elements();
         while (enum_rentals.hasMoreElements()) {
             Rental rental = (Rental) enum_rentals.nextElement();
             charge += rental.getCharge();
@@ -48,7 +47,7 @@ public class Customer {
 
     private int getTotalFrequentRenterPoints() {
         int points = 0;
-        Enumeration enum_rentals = rentals.elements();
+        Enumeration<Rental> enum_rentals = rentals.elements();
         while (enum_rentals.hasMoreElements()) {
             Rental rental = (Rental) enum_rentals.nextElement();
             points += rental.getFrequentRenterPoints();
